@@ -183,6 +183,18 @@ Apply the voice profile from `references/voice-profile-template.md`, then write 
 - Write a separate **"first comment"** containing links, additional context, or thread continuation
 - First comment must include at least 2 source links with titles (not just raw URLs)
 
+**Visual Rhythm (non-negotiable):**
+
+Posts live or die by how they look before anyone reads a word.
+
+Short lines.
+
+Then a longer sentence or two that explains the idea, adds context, and keeps people reading because it feels natural.
+
+Then short again.
+
+Vary block sizes deliberately: short → long → medium → short → one word. Never uniform. Every post must pass the **squint test** (see Phase 4, check #3) before it leaves the skill.
+
 ### Phase 4: QUALITY CHECK (Anti-Slop Filter)
 
 Run every post through these checks before presenting to user:
@@ -191,15 +203,19 @@ Run every post through these checks before presenting to user:
 
 2. **Source verification** — Every data point must have a real, checkable source. No "studies show" without naming the study. No "experts say" without naming the expert.
 
-3. **Voice match** — Compare sentence length, tone, and vocabulary against the voice profile. Flag any sections that drift toward generic LinkedIn-speak.
+3. **Squint test (visual rhythm)** — Zoom out or squint at the formatted post until the words are barely legible. Look only at the shape of the text blocks. They must vary in height: short, long, medium, short, one word. If all blocks look the same size, the post will feel like a wall — rewrite until the rhythm is visible. Tom Orbach (500+ posts, Forbes 30 Under 30): "I only hit Post when it's beautiful." This check is non-negotiable.
 
-4. **Expert test** — Ask: "Would someone with 10 years of experience in this field write this, or would they cringe?" Remove anything that fails this test.
+4. **Smart Brevity pass** — Read every sentence and ask: does this word earn its place? Cut every sentence that restates what the previous one said. Cut every adjective that doesn't change the meaning. The goal is the minimum words needed to land the idea — no more.
 
-5. **Deliver 2 versions:**
+5. **Voice match** — Compare sentence length, tone, and vocabulary against the voice profile. Flag any sections that drift toward generic LinkedIn-speak.
+
+6. **Expert test** — Ask: "Would someone with 10 years of experience in this field write this, or would they cringe?" Remove anything that fails this test.
+
+7. **Deliver 2 versions:**
    - **Standard** — Polished, professional, ready to post
    - **Punchier** — Shorter sentences, bolder claims, more personality
 
-6. **Brand guardrails check** — If the voice profile has brand guardrails, verify the post doesn't violate any of them. Check product naming, positioning, and framing against the guardrails list.
+8. **Brand guardrails check** — If the voice profile has brand guardrails, verify the post doesn't violate any of them. Check product naming, positioning, and framing against the guardrails list.
 
 ### Phase 5: POSTING GUIDE
 
@@ -209,6 +225,7 @@ After the user picks their preferred version, provide:
 - **Image/visual suggestion** — What type of visual would increase engagement (chart, photo, carousel, none)
 - **Hashtags** — 3-5 relevant hashtags (not spammy, not too broad)
 - **First-60-minutes plan** — What to do after posting: reply to every comment, engage on 5 other posts in your niche, share to relevant groups
+- **"Inspired by" amplification** — If the post draws on someone's idea, research, or work, add "Inspired by @[their handle]" at the end. Tag them. People who feel credited as inspiration share. This is one of the highest-ROI distribution moves on LinkedIn — a single share from the right person can 10x reach.
 - **Follow-up post topic** — A natural next post that builds on this one's momentum
 
 ### Phase 6: VISUAL REPORT (browser preview)

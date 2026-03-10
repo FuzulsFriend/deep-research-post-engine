@@ -461,6 +461,28 @@ Unpopular opinions trigger what psychologists call "the need for cognitive closu
 
 ---
 
+## 9. The Pattern Interrupt
+
+**Take something familiar + give it ONE weird twist**
+
+### When to Use
+When a conventional format (case study, listicle, announcement) is losing the audience's attention because they've seen it 100 times. The pattern interrupt works by triggering a double-take — the reader starts to scroll past, recognizes something familiar, then stops because ONE element doesn't fit. Use sparingly: one weird element is surprising, two is confusing.
+
+### The Rule
+Change exactly one thing. Keep everything else familiar so the contrast lands.
+
+- Case study over cocktails at a bar
+- A musical about cybersecurity
+- A job listing posted as a resignation letter
+- A pricing page written as a ransom note
+
+Crystal clear on the familiar part. Weird on only the one twist.
+
+### Why It Works
+The brain is a pattern-matching machine running on autopilot through a feed. When something matches a familiar pattern and then breaks it, the brain fires a surprise signal that physically stops the scroll. The one-twist rule keeps it understandable — too many changes and the brain labels it "weird and confusing" and moves on.
+
+---
+
 ## Quick Reference: Framework Selection Guide
 
 | Situation | Best Framework | Why |
@@ -481,7 +503,7 @@ Unpopular opinions trigger what psychologists call "the need for cognitive closu
 1. **Hook must work in under 200 characters** — that's all that shows before "see more."
 2. **No links in the post body** — always put links in the first comment.
 3. **End with a specific question**, not a generic one. "What's your experience with async work?" beats "Thoughts?"
-4. **White space matters** — use blank lines between paragraphs. Walls of text kill dwell time.
+4. **Visual rhythm, not just white space** — blank lines between paragraphs are the minimum. The blocks themselves must vary in length: short line, long paragraph, short line, medium, one word. Zoom out (CMD/CTRL −) until the words blur. The text shapes should look like a varied skyline, not a uniform grid. Uniform block sizes = scroll past. Tom Orbach (500+ posts, Forbes 30 Under 30): "I squint my eyes until I can barely read. If all the blocks look the same size, I rewrite. I only hit Post when it's beautiful."
 5. **One idea per post** — if you're covering two topics, write two posts.
 6. **Specificity over generality** — "47 hours of meetings" beats "too many meetings."
 7. **Be online for the first 60 minutes** — reply to every comment. This is non-negotiable for the algorithm.
