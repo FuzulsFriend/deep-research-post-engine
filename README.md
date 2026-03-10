@@ -3,7 +3,6 @@
 # Deep Research Post Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://code.claude.com)
 [![SKILL.md](https://img.shields.io/badge/SKILL.md-open%20standard-purple)](SKILL.md)
 
 A Claude Code skill that reads 5-8 real articles on your topic, filters out 59 AI writing patterns, and writes a LinkedIn post that sounds like you.
@@ -154,4 +153,4 @@ MIT
 
 ---
 
-*Made by [FuzulsFriend](https://github.com/FuzulsFriend) · Built with [Claude Code](https://code.claude.com)*
+*Made by [FuzulsFriend](https://github.com/FuzulsFriend)*
