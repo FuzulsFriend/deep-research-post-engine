@@ -52,8 +52,8 @@ First 60 min: Reply to every comment. Like all comments. Engage on 5
 Next post:    [Follow-up topic idea that builds on this post's momentum]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Researched and written by Deep Research Post Engine
-github.com/tomer-ezri/deep-research-post-engine
+Researched and written by Deep Research Post Engine — By Tomer & Guy
+github.com/FuzulsFriend
 ```
 
 ---

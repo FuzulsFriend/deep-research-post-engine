@@ -46,33 +46,65 @@ What makes it different:
 Let's get you set up.
 ```
 
-### Install Dependencies
+### Startup Sequence (Tool Detection + Context Questions)
 
-```
-RECOMMENDED:
-  read-website-fast MCP (reads full articles, not just snippets)
-    Install: claude mcp add read-website-fast -s user -- npx -y @just-every/mcp-read-website-fast
-    Repo:    https://github.com/just-every/mcp-read-website-fast
+At the start of every run, do these **in parallel**:
 
-OPTIONAL:
-  Apify MCP (for paywalled articles + social media research)
-    Install: claude mcp add apify -e APIFY_TOKEN=your_token -- npx -y @apify/actors-mcp-server
-    Repo:    https://github.com/apify/apify-mcp-server
+**A. Background Tool Detection (run silently while asking questions):**
 
-SPEED BOOST:
-  Agent Teams mode lets multiple Claude sessions work together — one leads, others research in parallel.
-  Enable: export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
-  Docs:   https://code.claude.com/docs/en/agent-teams
-```
+Search for these tools/MCPs without blocking the user:
 
-### First-Time Setup
+| Tool | What it does | How to detect |
+|------|-------------|---------------|
+| read-website-fast MCP | Reads full articles, not just snippets | Check if `mcp__read-website-fast__read_website` tool is available |
+| Apify MCP | Scrapes LinkedIn profiles, paywalled articles, social media | Check if `mcp__apify__*` tools are available |
+
+**B. Context Questions / First-Time Setup (ask immediately, don't wait for tool detection):**
 
 1. Ask user for **2-3 of their best-performing LinkedIn posts** (paste full text)
 2. Ask for their **niche** (e.g., "AI in healthcare", "B2B SaaS growth")
 3. Ask for their **target audience** (e.g., "CTOs at mid-market companies")
 4. Ask for their **language preference** (English, Hebrew, bilingual, etc.)
-5. Build a voice profile from their posts — save to `references/voice-profile-template.md`
-6. Ask (optional): **Do you have an existing content calendar or marketing strategy doc?** If yes, read it and align post topics with the existing plan.
+5. Ask (optional): **Do you have an existing content calendar or marketing strategy doc?** If yes, read it and align post topics with the existing plan.
+
+**Skip any question** where the answer is already known from Claude's memory, prior conversations, or information the user provided in their initial message. If ALL answers are already known, confirm them briefly and proceed.
+
+**Wait for the user to answer all remaining questions before starting any analysis.**
+
+### Tool Detection Results (after background check completes)
+
+Once background detection finishes AND user has answered context questions:
+
+1. **If all recommended tools are available** → Announce tools and proceed.
+2. **If some tools are missing** → Tell the user which tools are missing, what they enable, and ask:
+   "Would you like help installing the missing tools? Or should I continue without them?"
+   - **If yes** → Provide install commands and guide them through setup:
+     - read-website-fast: `claude mcp add read-website-fast -s user -- npx -y @just-every/mcp-read-website-fast`
+     - Apify MCP:
+       1. Get a free API token at https://console.apify.com/account/integrations
+       2. Install: `claude mcp add apify -e APIFY_TOKEN=your_token -- npx -y @apify/actors-mcp-server`
+   - **If no** → Continue, but announce: "Proceeding without [tool]. Research depth may be reduced without full article reading, and I won't be able to scrape your LinkedIn profile for voice matching."
+
+### Profile Scraping (for voice profile building)
+
+When building or updating the user's voice profile, scrape their LinkedIn profile to understand their writing style, audience, and brand:
+
+**Scraping fallback chain (pick first available):**
+1. **Apify MCP** (best) — Use Apify's LinkedIn scraper to get the user's profile, recent posts, and engagement data. Ask the user: "I can scrape your LinkedIn profile to better understand your voice and audience. Would you like me to do that?" If user declines, skip to next fallback.
+2. **read-website-fast MCP** — Fetch the user's LinkedIn profile URL directly. May get limited data due to LinkedIn's restrictions.
+3. **WebFetch (built-in)** — Basic web fetch of the profile URL. Will likely get minimal data.
+4. **Ask user to paste** — "I couldn't access your LinkedIn profile automatically. Please paste the text from 2-3 of your recent posts so I can build your voice profile."
+
+After scraping, extract: writing patterns, typical post length, formatting style, emoji usage, hook patterns, CTA patterns, topic themes, engagement patterns.
+
+Use this data to enrich the voice profile saved to `references/voice-profile-template.md`.
+
+### First-Time Voice Profile Build
+
+After context questions are answered and profile scraping is complete (or skipped):
+
+1. Build a voice profile from their posts and scraped data
+2. Save to `references/voice-profile-template.md`
 
 Voice profile captures: sentence length, punctuation habits, emoji usage, vocabulary level, signature phrases, formatting preferences (bullets vs paragraphs, line breaks, bold usage), and tone (direct, conversational, authoritative, vulnerable).
 
@@ -227,6 +259,17 @@ After the user picks their preferred version, provide:
 - **First-60-minutes plan** — What to do after posting: reply to every comment, engage on 5 other posts in your niche, share to relevant groups
 - **"Inspired by" amplification** — If the post draws on someone's idea, research, or work, add "Inspired by @[their handle]" at the end. Tag them. People who feel credited as inspiration share. This is one of the highest-ROI distribution moves on LinkedIn — a single share from the right person can 10x reach.
 - **Follow-up post topic** — A natural next post that builds on this one's momentum
+
+### Phase 5.5: USER REVIEW (before visual report)
+
+After completing the post (Phase 4 quality check) and posting guide (Phase 5), present both post versions and the posting guide to the user and ask:
+
+**"Here are your two post versions and the posting guide. Would you like to change anything, or should I generate the visual report?"**
+
+Wait for the user's response:
+- **If user requests changes** → Apply the changes (rewrite sections, adjust tone, add/remove data points, etc.), re-run quality checks, and ask again.
+- **If user approves** → Proceed to Phase 6 (visual report generation).
+- **If user says nothing specific** → Treat as approval and proceed to Phase 6.
 
 ### Phase 6: VISUAL REPORT (browser preview)
 
