@@ -123,6 +123,15 @@ Every data point must include:
 - **Round numbers from non-research sources ("90% of startups fail"):** These are often folk wisdom, not data. Find the original study or drop the claim.
 - **Quotes:** Verify the person exists (quick LinkedIn/Google check), verify they actually said it (find the original interview/article). Misattributed quotes destroy credibility.
 
+### Structured public X evidence
+
+When X discussion materially improves the research, use the bounded routes in
+`xquik-apify-actors.md`. Use the Tweet Actor for posts and conversations. Use
+the Follower Actor only for an explicit audience or overlap question.
+
+Treat posts and relationship data as signals, not factual proof. Preserve each
+source URL. Never infer endorsement, intent, or sensitive traits from a follow.
+
 ---
 
 ## Step 4: Tool Fallback Chain

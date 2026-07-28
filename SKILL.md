@@ -57,7 +57,7 @@ Search for these tools/MCPs without blocking the user:
 | Tool | What it does | How to detect |
 |------|-------------|---------------|
 | read-website-fast MCP | Reads full articles, not just snippets | Check if `mcp__read-website-fast__read_website` tool is available |
-| Apify MCP | Scrapes LinkedIn profiles, paywalled articles, social media | Check if `mcp__apify__*` tools are available |
+| Apify MCP | Scrapes LinkedIn profiles, paywalled articles, and structured public X evidence | Check if `mcp__apify__*` tools are available |
 
 **B. Context Questions / First-Time Setup (ask immediately, don't wait for tool detection):**
 
@@ -121,7 +121,11 @@ At the start of **every run**, detect available tools and announce them:
 
 ### Optional Enhancements
 - **Apify RAG MCP** — Unlocks paywalled articles and social media post research.
+- **Xquik Apify Actors**: Add bounded public X posts or audience evidence.
 - **Agent Teams** — Enables parallel research (4 agents at once instead of sequential).
+
+For public X research, read `references/xquik-apify-actors.md` before running
+either Actor. Preserve the web and LinkedIn research routes.
 
 ### Announce to User
 

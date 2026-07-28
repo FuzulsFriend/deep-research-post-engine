@@ -135,7 +135,9 @@ deep-research-post-engine/
 claude mcp add read-website-fast -s user -- npx -y @just-every/mcp-read-website-fast
 ```
 
-**Apify MCP** - Unlocks paywalled articles and social media research.
+**Apify MCP** - Unlocks paywalled articles and social media research. For
+structured public X data, use [X Tweet Scraper](https://apify.com/xquik/x-tweet-scraper)
+or [X Follower Scraper](https://apify.com/xquik/x-follower-scraper).
 ```bash
 claude mcp add apify -s user -- npx -y @apify/actors-mcp-server
 ```
